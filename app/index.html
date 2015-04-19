@@ -1,17 +1,28 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <title>ProProject</title>
-
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script src="./js/myApp.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
 </head>
 <body>
 
-  <div class="view-container">
-    <div ng-view class="view-frame"></div>
-    
-    Hier ist noch nichts. 
+  <div ng-controller="appCtrl">
+  	<h1 ng-model="xyz">{{xyz}}</h1>
+  	<h2 ng-model="test">{{test}}</h2>
   </div>
-
+  
+  <table ng-controller="tableCtrl">
+  <tr ng-repeat="consultant in consultants">
+  <td>	{{consultant.EmployeeID}}</td>
+   <td>	{{consultant.LastName}}</td>
+   
+  </tr>
+  </table>
+  
+<input type="text" id="id" value="hallo"/>
+<div id="ausgabe"></div>
 </body>
 </html>
