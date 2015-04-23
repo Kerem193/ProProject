@@ -5,7 +5,7 @@
   <title>ProProject</title>
   <script type="text/javascript" src="../angular/angular.js"></script>
   <script src="./js/myApp.js"></script>
-  <script src="../jquery/src/jquery.js"></script>
+  <script src="../jquery/dist/jquery.js"></script>
 </head>
 <body>
 
@@ -15,7 +15,22 @@
   </div>
   
     
- <div ng-controller="serverCtrl"></div>
+ <div ng-controller="serverCtrl">
+    <input type="text" id="vorname"   ng-model='vorname'/>
+    <input type="text" id="nachname"  ng-model='nachname'/>
+    <input type="text" id="projekt"   ng-model='projekt'/>
+    <input type="button" value="abschicken" ng-click="klick()"/>
+     
+     
+     
+    <div>
+    <p ng-model="vor">{{vor}}</p> 
+    <p ng-model="nach">{{nach}}</p> 
+
+    </div> 
+     
+ </div>
+    
     
 
     
