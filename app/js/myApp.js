@@ -31,7 +31,7 @@ myApp.controller('appCtrl', function($scope){
 });*/
 
 myApp.controller('serverCtrl', function($scope, $http) {
-	$http.get("/hallo").then(function(data){
+	$http.get("/").then(function(data){
         
             });
 
