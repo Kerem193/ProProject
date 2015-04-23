@@ -32,17 +32,17 @@ app.get('/c', function(req, res){
 
 //Hier Request
 app.get('/d', function(req, res){
-console.log("Hey request erfolgreich");
     
-    var jsondata= {
-    "value": [
-    {
-    "name": "Max",
-    "Nachname": "Mustermann"
-    }
- 
- ]
-};
+    var vorname=req.param("vorname");
+    var nachname=req.param("nachname");
+    var projekt=req.param("projekt");
+    console.log(vorname + "  " + nachname + "  " + projekt);
+    
+    
+    var jsondata= {};
+    
+    jsondata.vorname = vorname;
+    jsondata.nachname = nachname;
     
     res.send(jsondata);
     

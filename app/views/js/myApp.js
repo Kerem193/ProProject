@@ -1,8 +1,14 @@
-/**
- * 
+/**Datei: myApp.js
+ * Beschreibung:
+ * Hinweis: 
+ * Entwickler: Engin Aslan, Kerem Uyanik
+ * Version : 1.0 Prototyp
  */
 
-"use strict";
+//global
+var host= window.location.host;
+
+
 
 var myApp = angular.module('myApp', []);
 
@@ -14,15 +20,7 @@ myApp.controller('appCtrl', function($scope){
 		//ruf server auf
 });
 
-/*myApp.controller('tableCtrl', function($scope) {
-	var consultants;
-	$.ajax({
-		url: "http://services.odata.org/V4/Northwind/Northwind.svc/Employees",
-		async: false,
-		dataType: "json"
-	}).done(function(data){
-		$scope.consultants = data.value;
-	});*/
+
 
 /*myApp.controller('tableCtrl', function($scope, $http) {
 	$http.get("http://services.odata.org/V4/Northwind/Northwind.svc/Employees").then(function(data){
@@ -30,13 +28,26 @@ myApp.controller('appCtrl', function($scope){
 	});
 });*/
 
+
 myApp.controller('serverCtrl', function($scope, $http) {
-   var host= window.location.host;
-    $http.get("http://"+ host + "/d").then(function(data){
+    $scope.klick=function(){
+  
+    vorname=this.vorname;
+    nachname= this.nachname;
+    projekt= this.projekt;
+    url="http://"+ host + "/d?vorname=" + vorname +"&nachname=" + nachname + "&projekt=" + projekt;
+    $http.get(url).then(function(data){
         
-        console.log(data);
-    
-    });
+        var vor =data.data.vorname;
+        var nach =data.data.nachname;
+        $scope.vor=vor;
+        $scope.nach=nach;
+
+        }); 
+        
+        
+    }
+   
    
 
 });
