@@ -34,16 +34,22 @@ myApp.controller('serverCtrl', function($scope, $http) {
   
     vorname=this.vorname;
     nachname= this.nachname;
-    projekt= this.projekt;
-    url="http://"+ host + "/d?vorname=" + vorname +"&nachname=" + nachname + "&projekt=" + projekt;
+    matnr= this.matnr;
+    url="http://"+ host + "/d?vorname=" + vorname +"&nachname=" + nachname + "&matnr=" + matnr;
     $http.get(url).then(function(data){
         
-        var hinweis="Dies ist ein Hinweis! Sie haben diese Daten eingegeben";
+        var hinweis="Immatrikulation erfolgreich!";
         var vor ="Vorname "+data.data.vorname;
         var nach="Nachname " + data.data.nachname;
+        var matnr="Matrikelnummer " + data.data.matnr;
+        $scope.hinweis=hinweis;
         $scope.vor=vor;
-        $scope.nach=nach;   
-
+        $scope.nach=nach;
+        $scope.mat=matnr;
+        console.log(data.data);
+        $scope.students=data.data;
+        
+        
         }); 
         
         

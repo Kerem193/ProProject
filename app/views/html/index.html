@@ -11,22 +11,32 @@
 
   
     
+    <h1>Studenten immatrikulieren</h1>
+    
+    
  <div ng-controller="serverCtrl">
-    <input type="text" id="vorname"   ng-model='vorname'/>
-    <input type="text" id="nachname"  ng-model='nachname'/>
-    <input type="text" id="projekt"   ng-model='projekt'/>
+    <input type="text" placeholder="Vorname" id="vorname"   ng-model='vorname'/>
+    <input type="text"  placeholder="Nahchname" id="nachname"  ng-model='nachname'/>
+    <input type="text" placeholder="Matrikelnummer" id="matnr"   ng-model='matnr'/>
     <input type="button" value="abschicken" ng-click="klick()"/>
      
      
     <div id="ergebnis">
+    <p ng-model="hinweis">{{hinweis}}</p>
     <p ng-model="vor"> {{vor}}</p> 
     <p ng-model="nach"> {{nach}}</p> 
-    <p ng-model="pro"> {{pro}}</p>
+    <p ng-model="mat"> {{mat}}</p>
+    
+         
     </div> 
      
      
     
-     
+      <table>
+        <tr ng-repeat="x in students">
+            <td>{{x}}</td>
+        </tr>
+    </table>
      
  </div>
     

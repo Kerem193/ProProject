@@ -35,14 +35,15 @@ app.get('/d', function(req, res){
     
     var vorname=req.param("vorname");
     var nachname=req.param("nachname");
-    var projekt=req.param("projekt");
-    console.log(vorname + "  " + nachname + "  " + projekt);
+    var matnr=req.param("matnr");
+    console.log(vorname + "  " + nachname + "  " + matnr);
     
     
     var jsondata= {};
     
-    jsondata.vorname = vorname;
-    jsondata.nachname = nachname;
+    jsondata["vorname"] = vorname;
+    jsondata["nachname"] = nachname;
+    jsondata["matnr"] = matnr;
     
     res.send(jsondata);
     
