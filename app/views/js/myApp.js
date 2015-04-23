@@ -38,10 +38,11 @@ myApp.controller('serverCtrl', function($scope, $http) {
     url="http://"+ host + "/d?vorname=" + vorname +"&nachname=" + nachname + "&projekt=" + projekt;
     $http.get(url).then(function(data){
         
-        var vor =data.data.vorname;
-        var nach =data.data.nachname;
+        var hinweis="Dies ist ein Hinweis! Sie haben diese Daten eingegeben";
+        var vor ="Vorname "+data.data.vorname;
+        var nach="Nachname " + data.data.nachname;
         $scope.vor=vor;
-        $scope.nach=nach;
+        $scope.nach=nach;   
 
         }); 
         
