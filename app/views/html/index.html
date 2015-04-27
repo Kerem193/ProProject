@@ -9,10 +9,6 @@
 </head>
 <body>
 
-  <div ng-controller="appCtrl">
-  	<h1 ng-model="xyz">{{xyz}}</h1>
-  	<h2 ng-model="test">{{test}}</h2>
-  </div>
   
     
  <div ng-controller="serverCtrl">
@@ -22,19 +18,20 @@
     <input type="button" value="abschicken" ng-click="klick()"/>
      
      
-     
-    <div>
-    <p ng-model="vor">{{vor}}</p> 
-    <p ng-model="nach">{{nach}}</p> 
-
+    <div id="ergebnis">
+    <p ng-model="vor"> {{vor}}</p> 
+    <p ng-model="nach"> {{nach}}</p> 
+    <p ng-model="pro"> {{pro}}</p>
     </div> 
+     
+     
+    
+     
      
  </div>
     
     
 
-    
-<input type="text" id="id" value="hallo"/>
-<div id="ausgabe"></div>
+
 </body>
 </html>

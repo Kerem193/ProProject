@@ -30,11 +30,7 @@ myApp.controller('appCtrl', function($scope){
 
 
 myApp.controller('serverCtrl', function($scope, $http) {
-<<<<<<< HEAD
 
-   var host= window.location.host;
-    $http.get("http://"+ host + "/d").then(function(data){
-=======
     $scope.klick=function(){
   
     vorname=this.vorname;
@@ -42,12 +38,12 @@ myApp.controller('serverCtrl', function($scope, $http) {
     projekt= this.projekt;
     url="http://"+ host + "/d?vorname=" + vorname +"&nachname=" + nachname + "&projekt=" + projekt;
     $http.get(url).then(function(data){
->>>>>>> 0904c8333100fdcfa966f387ad1236d562428ee1
         
-        var vor =data.data.vorname;
-        var nach =data.data.nachname;
+        var hinweis="Dies ist ein Hinweis! Sie haben diese Daten eingegeben";
+        var vor ="Vorname "+data.data.vorname;
+        var nach="Nachname " + data.data.nachname;
         $scope.vor=vor;
-        $scope.nach=nach;
+        $scope.nach=nach;   
 
         }); 
         
