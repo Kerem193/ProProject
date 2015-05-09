@@ -6,17 +6,20 @@
   <script type="text/javascript" src="../angular/angular.js"></script>
   <script src="./js/myApp.js"></script>
   <script src="../jquery/dist/jquery.js"></script>
+  <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
 </head>
 <body>
 
   
+ <div style="margin-left:28px">   
+     <h1>Studenten immatrikulieren</h1>
+ </div>
     
- <div ng-controller="serverCtrl">
-    <input type="text" id="vorname"   ng-model='vorname'/>
-    <input type="text" id="nachname"  ng-model='nachname'/>
-    <input type="text" id="projekt"   ng-model='projekt'/>
-    <input type="button" value="abschicken" ng-click="klick()"/>
-     
+<div ng-controller="serverCtrl" style="width:200px; margin-left:30px; margin-top:30px">
+    <input type="text" placeholder="Vorname" id="vorname" class="form-control"  ng-model='vorname' style="margin-bottom:10px"/>
+    <input type="text"  placeholder="Nahchname" id="nachname" class="form-control" ng-model='nachname' style="margin-bottom:10px"/>
+    <input type="text" placeholder="Matrikelnummer" id="matnr" class="form-control"  ng-model='matnr' style="margin-bottom:10px"/>
+    <input type="button" class="btn btn-info" value="Abschicken" ng-click="klick()" style="margin-bottom:10px"/>
      
     <div id="ergebnis">
     <p ng-model="vor"> {{vor}}</p> 
@@ -29,6 +32,20 @@
      
      
  </div>
+
+        <p ng-model="hinweis">{{hinweis}}</p>
+        <p ng-model="vor"> {{vor}}</p> 
+        <p ng-model="nach"> {{nach}}</p> 
+        <p ng-model="mat"> {{mat}}</p>
+    </div> 
+     
+     
+    <table class="table table-hover" >
+        <tr class="success" ng-repeat="x in students">
+            <td>{{x}}</td>
+        </tr>
+    </table>
+</div>
     
     
 
