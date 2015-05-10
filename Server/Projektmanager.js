@@ -18,10 +18,10 @@ exports.projektanlegen = function(conn,projektname,wahrscheinlichkeit,tagessatz,
     
     //Prüfungen auf Datenrichtigkeit
     
-    
     //Einfügen in die Datenbank
-   conn.query('insert into test.Projekt  values('+ 9 +','+projektname+','+wahrscheinlichkeit+',' + tagessatz + ')', function(err, result){
+   conn.query('insert into test.Projekt values('+ 3 +','+projektname+','+wahrscheinlichkeit+',' + tagessatz + ')', function(err, result){
     console.log(result);
+       console.log(err);
         if(err){
         console.log("Fehler");
         }else{

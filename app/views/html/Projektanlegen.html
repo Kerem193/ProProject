@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html ng-app="projekt">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>ProProject - Index</title>
+
+		<!-- Bootstrap Core CSS -->
+		<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="./css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom CSS -->
+		<link href="css/mainstyle.css" rel="stylesheet">
+        <script type="text/javascript" src="../angular/angular.js"></script>
+        <script src="./js/projekt.js"></script>
+        <script src="../jquery/dist/jquery.js"></script>
+        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
+		<script>
+			$(document).ready(function() {
+				$("#mytable #checkall").click(function() {
+					if ($("#mytable #checkall").is(':checked')) {
+						$("#mytable input[type=checkbox]").each(function() {
+							$(this).prop("checked", true);
+						});
+
+					} else {
+						$("#mytable input[type=checkbox]").each(function() {
+							$(this).prop("checked", false);
+						});
+					}
+				});
+
+				$("[data-toggle=tooltip]").tooltip();
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="navbarheader"></div>
+
+		<!-- Navigation -->
+		<div id="navigation">
+			<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+			<nav id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+					<li class="sidebar-brand">
+						<a href="#top">Projekte anlegen</a>
+					</li>
+					<li>
+						<a href="#top">Home</a>
+					</li>
+					<li>
+						<a href="#about">Meine Projekte</a>
+					</li>
+					<li>
+						<a href="Muskelaufbau.html">Projekt anlegen</a>
+					</li>
+					<li>
+						<a href="Trainingsplan.html">Kundenprojekt planen</a>
+					</li>
+					<li>
+						<a href="Ernaehrung.html">Teamverfügbarkeit</a>
+					</li>
+					<li>
+						<a href="MeinBeitrag.html">Forecast</a>
+					</li>
+					<li>
+						<a href="#contact">Einstellungen</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-11" id="maindiv">
+				<div class="container">
+					<div id="listdiv">
+						<table id="projekttabelle" class="table table-bordred table-striped">
+							<tr>
+								<th>Projektname</th>
+								<th>Wahrscheinlichkeit</th>
+								<th>Tagessatz</th>
+								<th>Ansprechpartner</th>
+								<th>Aufgabe</th>
+								<th>Bearbeiten</th>
+								<th>Löschen</th>
+							</tr>
+							<tr>
+								<td>ProProject</td>
+								<td>50%</td>
+								<td>300€</td>
+								<td>Manfred Schwarz</td>
+								<td>Panel</td>
+								<td>
+								<p data-placement="top" data-toggle="tooltip">
+									<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+										<span class="glyphicon glyphicon-pencil"></span>
+									</button>
+								</p></td>
+								<td>
+								<p data-placement="top" data-toggle="tooltip">
+									<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+										<span class="glyphicon glyphicon-trash"></span>
+									</button>
+								</p></td>
+							</tr>
+
+							<tr>
+								<td>BestProject </td>
+								<td>20%</td>
+								<td>100€</td>
+								<td>Kerem Uyanik</td>
+								<td>ePPl</td>
+								<td>
+								<p data-placement="top" data-toggle="tooltip">
+									<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+										<span class="glyphicon glyphicon-pencil"></span>
+									</button>
+								</p></td>
+								<td>
+								<p data-placement="top" data-toggle="tooltip">
+									<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+										<span class="glyphicon glyphicon-trash"></span>
+									</button>
+								</p></td>
+							</tr>
+						</table>
+					</div>
+                    
+                    <div ng-controller="projektanlegenCtrl">
+                    
+					<div class="col-md-2" class="inputdiv">
+						<input id="projektnameinput" type="text" placeholder="Projektname" ng-model='projektname'/>
+					</div>
+					<div class="col-md-2" class="inputdiv">
+						<input id="wahrscheinlichkeitinput" type="text" placeholder="Wahrscheinlichkeit" ng-model='wahrscheinlichkeit'/>
+					</div>
+					<div class="col-md-2" class="inputdiv">
+						<input id="tagessatzinput" type="text" placeholder="Tagessatz" ng-model='tagessatz'/>
+					</div>
+					<div class="col-md-2" class="inputdiv">
+						<input id="ansprechpartnerinput" type="text" placeholder="Ansprechpartner" ng-model='ansprechpartner'/>
+					</div>
+					<div class="col-md-2" class="inputdiv">
+						<input id="aufgabeinput" type="text" placeholder="Aufgabe" ng-model='aufgabe'/>
+					</div>
+					<div class="col-md-1">
+						<button ng-click="klick()" class="btn btn-default full-width" id="plus">
+							<span class="glyphicon glyphicon-plus-sign"></span>
+						</button>
+					</div>
+                    
+                    </div>
+                    
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+						<h4 class="modal-title custom_align" id="Heading">Bearbeiten</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Projektname">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Wahrscheinlichkeit">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Tagessatz">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Ansprechpartner">
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Aufgabe">
+						</div>
+					</div>
+					<div class="modal-footer ">
+						<button class="btn btn-warning btn-lg" style="width: 100%;">
+							<span class="glyphicon glyphicon-ok-sign"></span> Aktualisieren
+						</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+
+		<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal" aria-hidden="true">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+						<h4 class="modal-title custom_align" id="Heading">Projekt löschen</h4>
+					</div>
+					<div class="modal-body">
+						<div class="alert alert-danger">
+							<span class="glyphicon glyphicon-warning-sign"></span> Soll das Projekt wirklich gelöscht werden?
+						</div>
+
+					</div>
+					<div class="modal-footer ">
+						<button type="button" class="btn btn-success" >
+							<span class="glyphicon glyphicon-ok-sign"></span> Ja
+						</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span> Abbrechen
+						</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+
+			<!-- Bootstrap Core JavaScript -->
+			<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+
+			<!-- JavaScript Navigation -->
+			<script>
+				// Closes the sidebar menu
+				$("#menu-close").click(function(e) {
+					e.preventDefault();
+					$("#sidebar-wrapper").toggleClass("active");
+				});
+				// Opens the sidebar menu
+				$("#menu-toggle").click(function(e) {
+					e.preventDefault();
+					$("#sidebar-wrapper").toggleClass("active");
+				});
+			</script>
+
+			<!-- JavaScript CreatTable -->
+	</body>
+</html>
