@@ -11,6 +11,7 @@
 		<title>ProProject - Index</title>
 
 		<!-- Bootstrap Core CSS -->
+<<<<<<< HEAD
 		<link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
 
@@ -19,6 +20,36 @@
         <script type="text/javascript" src="../angular/angular.js"></script>
         <script src="../js/projekt.js"></script>
         <script src="../jquery/dist/jquery.js"></script>
+=======
+		<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="./css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom CSS -->
+		<link href="css/mainstyle.css" rel="stylesheet">
+        <script type="text/javascript" src="../angular/angular.js"></script>
+        <script src="./js/projekt.js"></script>
+        <script src="../jquery/dist/jquery.js"></script>
+        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
+		<script>
+			$(document).ready(function() {
+				$("#mytable #checkall").click(function() {
+					if ($("#mytable #checkall").is(':checked')) {
+						$("#mytable input[type=checkbox]").each(function() {
+							$(this).prop("checked", true);
+						});
+
+					} else {
+						$("#mytable input[type=checkbox]").each(function() {
+							$(this).prop("checked", false);
+						});
+					}
+				});
+
+				$("[data-toggle=tooltip]").tooltip();
+			});
+		</script>
+		
+>>>>>>> 8c969662b6a0cd200415d77aef2c58a22ab805b2
 	</head>
 
 	<body>
@@ -207,7 +238,11 @@
 			</div>
 
 			<!-- Bootstrap Core JavaScript -->
+<<<<<<< HEAD
 			<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+=======
+			<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+>>>>>>> 8c969662b6a0cd200415d77aef2c58a22ab805b2
 
 			<!-- JavaScript Navigation -->
 			<script>
