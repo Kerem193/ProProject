@@ -17,25 +17,9 @@
 		<!-- Custom CSS -->
         <script type="text/javascript" src="../angular/angular.js"></script>
         <script src="./js/projekt.js"></script>
-        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
         
-        <script src="../jquery/dist/jquery.js"></script>
-
         
-		<!-- Custom CSS -->
 		<link href="../css/loginstyle.css" rel="stylesheet">
-		<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="./css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-		<!-- Custom CSS -->
-		<link href="css/mainstyle.css" rel="stylesheet">
-        <script type="text/javascript" src="../angular/angular.js"></script>
-        <script src="./js/projekt.js"></script>
-        <script src="../jquery/dist/jquery.js"></script>
-        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
-        
-		<!-- Custom CSS -->
-		<link href="./css/loginstyle.css" rel="stylesheet">
 
 	</head>
 
@@ -60,39 +44,11 @@
 		<!-- About -->
 		<footer></footer>
 
-		<script src="./jquery/dist/jquery.js"></script>
+		<script src="../jquery/dist/jquery.js"></script>
 
 		<!-- Bootstrap Core JavaScript -->
-		<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="../bootstrap/dist/js/bootstrap.js"></script>
 
 		<!-- Custom Theme JavaScript -->
-		<script>
-			// Closes the sidebar menu
-			$("#menu-close").click(function(e) {
-				e.preventDefault();
-				$("#sidebar-wrapper").toggleClass("active");
-			});
-			// Opens the sidebar menu
-			$("#menu-toggle").click(function(e) {
-				e.preventDefault();
-				$("#sidebar-wrapper").toggleClass("active");
-			});
-			// Scrolls to the selected menu item on the page
-			$(function() {
-				$('a[href*=#]:not([href=#])').click(function() {
-					if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-						var target = $(this.hash);
-						target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-						if (target.length) {
-							$('html,body').animate({
-								scrollTop : target.offset().top
-							}, 1000);
-							return false;
-						}
-					}
-				});
-			});
-		</script>
-
 	</body>
 </html>

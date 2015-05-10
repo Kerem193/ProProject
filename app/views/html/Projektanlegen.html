@@ -19,33 +19,7 @@
         <script type="text/javascript" src="../angular/angular.js"></script>
         <script src="../js/projekt.js"></script>
         <script src="../jquery/dist/jquery.js"></script>
-		<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="./css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-		<!-- Custom CSS -->
-		<link href="css/mainstyle.css" rel="stylesheet">
-        <script type="text/javascript" src="../angular/angular.js"></script>
-        <script src="./js/projekt.js"></script>
-        <script src="../jquery/dist/jquery.js"></script>
-        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
-		<script>
-			$(document).ready(function() {
-				$("#mytable #checkall").click(function() {
-					if ($("#mytable #checkall").is(':checked')) {
-						$("#mytable input[type=checkbox]").each(function() {
-							$(this).prop("checked", true);
-						});
-
-					} else {
-						$("#mytable input[type=checkbox]").each(function() {
-							$(this).prop("checked", false);
-						});
-					}
-				});
-
-				$("[data-toggle=tooltip]").tooltip();
-			});
-		</script>
 		
 	</head>
 
@@ -198,7 +172,7 @@
 					</div>
 					<div class="modal-footer ">
 						<button class="btn btn-warning btn-lg" style="width: 100%;">
-							<span class="glyphicon glyphicon-ok-sign"></span> Aktualisieren
+							<span class="glyphicon glyphicon-ok-sign"></span> Aktualisieren
 						</button>
 					</div>
 				</div>
@@ -224,10 +198,10 @@
 					</div>
 					<div class="modal-footer ">
 						<button type="button" class="btn btn-success" >
-							<span class="glyphicon glyphicon-ok-sign"></span> Ja
+							<span class="glyphicon glyphicon-ok-sign"></span> Ja
 						</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">
-							<span class="glyphicon glyphicon-remove"></span> Abbrechen
+							<span class="glyphicon glyphicon-remove"></span> Abbrechen
 						</button>
 					</div>
 				</div>
