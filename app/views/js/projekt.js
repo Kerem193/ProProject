@@ -12,6 +12,7 @@ var projekt = angular.module('projekt', []);
 
 
 projekt.controller('projektanlegenCtrl', function($scope, $http) {
+    
     $scope.klick=function(){
   
     projektname=this.projektname;

@@ -62,7 +62,7 @@ app.get('/', function(req, res){
 
 
 app.get('/projekt', function(req, res){
-    res.sendFile(pfad+'/projektanlegenproto.html');
+    res.sendFile(pfad+'/Projektanlegen.html');
  });
 
 

@@ -1,43 +1,86 @@
-<!doctype html>
-<html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <title>ProProject</title>
-  <script type="text/javascript" src="../angular/angular.js"></script>
-  <script src="./js/myApp.js"></script>
-  <script src="../jquery/dist/jquery.js"></script>
-  <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
-</head>
-<body>
+<!DOCTYPE HTML>
+<html>
+	<head>
 
-  
- <div style="margin-left:28px">   
-     <h1>Studenten immatrikulieren</h1>
- </div>
-    
-<div ng-controller="serverCtrl" style="width:200px; margin-left:30px; margin-top:30px">
-    <input type="text" placeholder="Vorname" id="vorname" class="form-control"  ng-model='vorname' style="margin-bottom:10px"/>
-    <input type="text"  placeholder="Nahchname" id="nachname" class="form-control" ng-model='nachname' style="margin-bottom:10px"/>
-    <input type="text" placeholder="Matrikelnummer" id="matnr" class="form-control"  ng-model='matnr' style="margin-bottom:10px"/>
-    <input type="button" class="btn btn-info" value="Abschicken" ng-click="klick()" style="margin-bottom:10px"/>
-     
-    <div id="ergebnis">
-        <p ng-model="hinweis">{{hinweis}}</p>
-        <p ng-model="vor"> {{vor}}</p> 
-        <p ng-model="nach"> {{nach}}</p> 
-        <p ng-model="mat"> {{mat}}</p>
-    </div> 
-     
-     
-    <table class="table table-hover" >
-        <tr class="success" ng-repeat="x in students">
-            <td>{{x}}</td>
-        </tr>
-    </table>
-</div>
-    
-    
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
+		<title>ProProject - Index</title>
 
-</body>
+		<!-- Bootstrap Core CSS -->
+		<link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+		
+		<!-- Custom CSS -->
+        <script type="text/javascript" src="../angular/angular.js"></script>
+        <script src="./js/projekt.js"></script>
+        <link type="text/css" rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css"/>
+        
+        <script src="../jquery/dist/jquery.js"></script>
+
+        
+		<!-- Custom CSS -->
+		<link href="../css/loginstyle.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<!-- Header -->
+		<div id="proprojectgif" class="col-md-1"><img src="img/ProProject.gif" class="img-responsive"/></div>
+		<div class="backgroundlogin"></div>
+			<div class="jumbotron">
+				<div class="container">
+					<h2>Login</h2>
+					<div class="box">
+						<input type="text" placeholder="username">
+						<input type="password" placeholder="password">
+						<button class="btn btn-default full-width">
+							<span class="glyphicon glyphicon-ok"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		
+		<!-- About -->
+		<footer></footer>
+
+		<script src="./jquery/dist/jquery.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- Custom Theme JavaScript -->
+		<script>
+			// Closes the sidebar menu
+			$("#menu-close").click(function(e) {
+				e.preventDefault();
+				$("#sidebar-wrapper").toggleClass("active");
+			});
+			// Opens the sidebar menu
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#sidebar-wrapper").toggleClass("active");
+			});
+			// Scrolls to the selected menu item on the page
+			$(function() {
+				$('a[href*=#]:not([href=#])').click(function() {
+					if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+						var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+						if (target.length) {
+							$('html,body').animate({
+								scrollTop : target.offset().top
+							}, 1000);
+							return false;
+						}
+					}
+				});
+			});
+		</script>
+
+	</body>
 </html>
